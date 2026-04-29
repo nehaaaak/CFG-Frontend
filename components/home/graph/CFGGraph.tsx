@@ -53,15 +53,6 @@ export default function CFGGraph({
         : {}),
     },
   }));
-  // const nodes: Node[] = rawNodes.map((n) => ({
-  //   ...n,
-  //   style: {
-  //     ...n.style,
-  //     ...(selectedNodeId === n.id
-  //       ? { outline: "2px solid hsl(var(--primary))", borderRadius: 6 }
-  //       : {}),
-  //   },
-  // }));
 
   const edges: Edge[] = data.edges;
 

@@ -1,4 +1,3 @@
-// src/data/sampleCode.ts
 export const SAMPLE_CODES = [
   /* ---------------- EASY ---------------- */
   {
@@ -56,6 +55,37 @@ export const SAMPLE_CODES = [
             else:
                 result.append(-1)
     return result`,
+  },
+  {
+    id: "process_orders",
+    difficulty: "hard",
+    title: "Process Orders",
+    description: "Multiple decision paths",
+    code: `def process_orders(orders):
+    total = 0
+    result = []
+
+    for i in range(len(orders)):
+        if orders[i] is not None:
+            if orders[i] > 0:
+                if orders[i] % 2 == 0:
+                    total += orders[i]
+                    result.append(orders[i])
+                else:
+                    total += orders[i] + 5
+                    result.append(orders[i])
+            else:
+                if orders[i] == 0:
+                    result.append(0)
+                else:
+                    result.append(-1)
+        else:
+            result.append(-1)
+
+    if total > 50:
+        total = total - 5
+
+    return total, result`,
   },
   {
     id: "nested-conditions",
