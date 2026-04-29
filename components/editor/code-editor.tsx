@@ -18,11 +18,11 @@ const CodeEditor = ({
   readOnly = false,
   className,
 }: CodeEditorProps) => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   const monacoTheme = useMemo(
-    () => (theme === "dark" ? "vs-dark" : "vs-light"),
-    [theme],
+    () => (resolvedTheme === "light" ? "vs-light" : "vs-dark"),
+    [resolvedTheme],
   );
   return (
     <div className={cn("h-full w-full", className)}>
