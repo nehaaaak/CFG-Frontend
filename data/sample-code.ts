@@ -34,10 +34,56 @@ export const SAMPLE_CODES = [
     return total`,
   },
 
+  /* ---------------- MEDIUM ---------------- */
+  {
+    id: "fibonacci",
+    difficulty: "medium",
+    suggestion: true,
+    title: "Fibonacci",
+    description: "Recursive function with base cases",
+    code: `def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)`,
+  },
+  {
+    id: "binary-search",
+    difficulty: "medium",
+    suggestion: true,
+    title: "Binary Search",
+    description: "Loop with conditional branching",
+    code: `def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1`,
+  },
+  {
+    id: "bubble-sort",
+    difficulty: "medium",
+    suggestion: true,
+    title: "Bubble Sort",
+    description: "Nested loops with swapping logic",
+    code: `def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr`,
+  },
+
   /* ---------------- HARD ---------------- */
   {
     id: "analyze-number",
     difficulty: "hard",
+    suggestion: true,
     title: "Analyze Number",
     description: "Multiple decision paths",
     code: `def analyze_numbers(nums):

@@ -247,29 +247,6 @@ const Home = () => {
                   />
                 )}
               </Section>
-
-              {/* <Section className="min-h-0">
-                <RightPanel
-                  isGenerating={isPending}
-                  hasGraph={isSuccess}
-                  data={cfgData}
-                  stats={cfgStats}
-                  toggleEditorVisibility={toggleEditorVisibility}
-                  isEditorVisible={isEditorVisible}
-                  aiExplanation={ai_explanation}
-                  codeSmells={codeSmells}
-                  refactoringSuggestions={refactoringSuggestions}
-                  halstead={halstead}
-                  dataFlow={dataFlow}
-                  paths={paths}
-                  selectedNodeId={selectedNode?.id ?? null}
-                  onNodeSelect={handleNodeSelect}
-                  onExplainPath={handleExplainPath}
-                  activePath={selectedPath?.index ?? null}
-                  sessionId={sessionId}
-                  functionName={functionName}
-                />
-              </Section> */}
             </Container>
           </motion.div>
         )}

@@ -5,21 +5,7 @@ import CodeEditor from "@/components/editor/code-editor";
 import { GitBranch, Play, Sparkles, FileCode } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-
-const SUGGESTIONS = [
-  {
-    label: "Fibonacci",
-    code: `def fibonacci(n):\n    if n <= 1:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)`,
-  },
-  {
-    label: "Binary search",
-    code: `def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1`,
-  },
-  {
-    label: "Bubble sort",
-    code: `def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n-i-1):\n            if arr[j] > arr[j+1]:\n                arr[j], arr[j+1] = arr[j+1], arr[j]\n    return arr`,
-  },
-];
+import { SAMPLE_CODES } from "@/data/sample-code";
 
 const WORDS = ["control flow", "execution", "code paths", "program flow"];
 
@@ -47,6 +33,10 @@ export default function HeroEditor({
 
     return () => clearInterval(interval);
   }, []);
+
+  const SUGGESTIONS = SAMPLE_CODES.filter(
+    (s) => "suggestion" in s && s.suggestion,
+  );
 
   return (
     <motion.div
@@ -119,14 +109,13 @@ export default function HeroEditor({
         </span>
         {SUGGESTIONS.map((s) => (
           <button
-            key={s.label}
+            key={s.id}
             onClick={() => {
-              console.log(s.code);
               setCode(s.code);
             }}
             className="text-xs px-3 py-1 rounded-full border border-border hover:bg-muted transition-colors font-mono"
           >
-            {s.label}
+            {s.title}
           </button>
         ))}
       </div>
